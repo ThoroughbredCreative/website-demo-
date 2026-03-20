@@ -306,6 +306,35 @@
 
         .gallery-item:hover img { transform: scale(1.1); }
 
+        .photo-item .checkmark {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--brand-green);
+            font-size: 1rem;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+        }
+
+        .slide-left, .slide-right {
+            opacity: 0;
+            transition: transform 0.8s ease, opacity 0.8s ease;
+        }
+
+        .slide-left { transform: translateX(-80px); }
+        .slide-right { transform: translateX(80px); }
+
+        .slide-left.active, .slide-right.active {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
         /* --- Pricing --- */
         .pricing-grid {
             display: grid;
@@ -528,10 +557,22 @@
         <div class="container">
             <h2 class="reveal" style="text-align: center; margin-bottom: 40px;">Inside the Interface</h2>
             <div class="gallery-grid">
-                <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1534150123024-c47481c22649?auto=format&fit=crop&q=80&w=800" alt="App Mockup 1"></div>
-                <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1596395819057-e37f55a85289?auto=format&fit=crop&q=80&w=800" alt="App Mockup 2"></div>
-                <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&q=80&w=800" alt="Cycling 1"></div>
-                <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1554260570-e9689a3418b8?auto=format&fit=crop&q=80&w=800" alt="Cycling 2"></div>
+                <div class="gallery-item photo-item slide-left reveal">
+                    <img src="test%20photos/Screenshot_20260320-112219.png" alt="Test Photo 1">
+                    <div class="checkmark"><i class="fas fa-check"></i></div>
+                </div>
+                <div class="gallery-item photo-item slide-right reveal">
+                    <img src="test%20photos/Screenshot_20260320-112221.png" alt="Test Photo 2">
+                    <div class="checkmark"><i class="fas fa-check"></i></div>
+                </div>
+                <div class="gallery-item photo-item slide-left reveal">
+                    <img src="test%20photos/Screenshot_20260320-112223.png" alt="Test Photo 3">
+                    <div class="checkmark"><i class="fas fa-check"></i></div>
+                </div>
+                <div class="gallery-item photo-item slide-right reveal">
+                    <img src="test%20photos/Screenshot_20260320-112232.png" alt="Test Photo 4">
+                    <div class="checkmark"><i class="fas fa-check"></i></div>
+                </div>
             </div>
         </div>
     </section>
